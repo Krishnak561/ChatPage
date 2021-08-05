@@ -1,4 +1,4 @@
-# Chat Interface
+# Main Chat Interface
 
 A new Flutter project.
 
