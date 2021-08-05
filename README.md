@@ -1,4 +1,4 @@
-# internship
+# Chat Interface
 
 A new Flutter project.
 
