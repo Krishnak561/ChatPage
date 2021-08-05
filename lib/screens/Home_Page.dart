@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:internship/Services/AddingContacts.dart';
-import 'package:internship/Services/Profile_Pictures.dart';
-import 'package:internship/Services/Chat_Contact_Template.dart';
-import 'package:internship/Services/AddingContacts.dart';
+import 'package:internship/Services/Constants.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -18,27 +16,27 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
+        backgroundColor: Colors.white,
         leading: Icon(
           Icons.search_rounded,
-          color: Colors.black26,
+          color: kSilentFeatures,
           size: 30,
         ),
         title: Text(
           "Contacts",
-          style: TextStyle(color: Colors.black, fontSize: 25),
+          style: TextStyle(color: kBlack, fontSize: 25),
         ),
         actions: <Widget>[
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 15),
             child: Icon(
               Icons.more_horiz,
-              color: Colors.black26,
+              color: kSilentFeatures,
               size: 30,
             ),
           )
         ],
         centerTitle: true,
-        backgroundColor: Colors.white,
         elevation: 0,
       ),
       body: Column(
@@ -51,14 +49,14 @@ class _HomePageState extends State<HomePage> {
                 Text(
                   "ONLINE",
                   style: TextStyle(
-                      color: Colors.black26,
+                      color: kSilentFeatures,
                       fontSize: 15,
                       fontWeight: FontWeight.w900),
                 ),
                 Text(
                   "+ADD FRIENDS",
                   style: TextStyle(
-                      color: Color(0xFFF6BEAD),
+                      color: kChiefFeatures,
                       fontSize: 15,
                       fontWeight: FontWeight.w900),
                 ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:internship/Services/Constants.dart';
 
 Widget onlineProfile(
     {double padding = 10.0, bool online = true, int picURL = 1}) {
@@ -29,7 +30,7 @@ CircleAvatar onlineIndicator() {
     backgroundColor: Colors.white,
     radius: 8.0,
     child: CircleAvatar(
-      backgroundColor: Color(0xFFF6BEAD),
+      backgroundColor: kChiefFeatures,
       radius: 4.0,
     ),
   );

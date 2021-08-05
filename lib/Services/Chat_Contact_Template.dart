@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'Constants.dart';
 import 'Profile_Pictures.dart';
 import 'dart:math';
 
@@ -55,10 +56,10 @@ class ChatContact {
                             style: TextStyle(
                                 fontSize: 17,
                                 color: read
-                                    ? Colors.black38
+                                    ? kSilentFeatures
                                     : checkTyping(online, typing)
-                                        ? Colors.blue
-                                        : Colors.black),
+                                        ? kTyping
+                                        : kBlack),
                             maxLines: 1,
                             overflow: TextOverflow.ellipsis,
                             softWrap: false,
@@ -75,7 +76,7 @@ class ChatContact {
                 children: <Widget>[
                   Text(
                     time,
-                    style: TextStyle(color: Colors.black26, fontSize: 17),
+                    style: TextStyle(color: kSilentFeatures, fontSize: 17),
                   ),
                   read ? doubleTick() : circleAvatar(numberOfMsgs),
                 ],
@@ -89,7 +90,7 @@ class ChatContact {
 
   CircleAvatar circleAvatar(int num) {
     return CircleAvatar(
-      backgroundColor: Color(0xFFF6BEAD),
+      backgroundColor: kChiefFeatures,
       radius: 15,
       child: Text(
         "$num",
@@ -101,7 +102,7 @@ class ChatContact {
   Icon doubleTick() {
     return Icon(
       Icons.done_all_outlined,
-      color: Colors.black26,
+      color: kSilentFeatures,
       size: 25,
     );
   }

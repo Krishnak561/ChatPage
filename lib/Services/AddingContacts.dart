@@ -11,7 +11,10 @@ class OnlineStatusProfile {
     for (int i = 0; i < iterations; i++) {
       var rng = Random();
       onlineProfileList.add(
-        onlineProfile(picURL: rng.nextInt(5) + 1),
+        Padding(
+          padding: const EdgeInsets.only(right: 5),
+          child: onlineProfile(picURL: rng.nextInt(5) + 1),
+        ),
       );
     }
     return onlineProfileList;
@@ -30,7 +33,7 @@ class ChatContactPage {
     page.chatContactTemplate(
       'Khristina Shtromberger',
       'Hey, Hi How are you doing',
-      '19:30',
+      '15:43',
       numberOfMsgs: 3,
       typing: true,
       read: false,
