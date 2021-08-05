@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:internship/Services/AddingContacts.dart';
 import 'package:internship/Services/Profile_Pictures.dart';
-import 'package:internship/Services/Chat_Info_Bubble.dart';
+import 'package:internship/Services/Chat_Contact_Template.dart';
 import 'package:internship/Services/AddingContacts.dart';
 
 class HomePage extends StatefulWidget {
@@ -11,7 +11,8 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   ScrollController _controller = ScrollController();
-
+  OnlineStatusProfile profile = OnlineStatusProfile();
+  ChatContactPage chat = ChatContactPage();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,11 +41,11 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: Colors.white,
         elevation: 0,
       ),
-      body: Padding(
-        padding: EdgeInsets.only(left: 15, right: 15),
-        child: Column(
-          children: <Widget>[
-            Row(
+      body: Column(
+        children: <Widget>[
+          Padding(
+            padding: EdgeInsets.only(left: 15, right: 15),
+            child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 Text(
@@ -63,27 +64,33 @@ class _HomePageState extends State<HomePage> {
                 ),
               ],
             ),
-            Container(
+          ),
+          Padding(
+            padding: EdgeInsets.only(left: 15, right: 7),
+            child: Container(
               margin: EdgeInsets.symmetric(vertical: 20.0),
               height: 80.0,
               child: ListView(
                 scrollDirection: Axis.horizontal,
-                children: onlineProfileList,
+                children: profile.LoopingToAdd(10),
               ),
             ),
-            Container(
-              child: ListView(
-                physics: AlwaysScrollableScrollPhysics(),
-                controller: _controller,
-                shrinkWrap: true,
-                children: <Widget>[
-                  //TODO Make a list.
-
-                ],
+          ),
+          Expanded(
+            flex: 1,
+            child: Padding(
+              padding: EdgeInsets.only(left: 15, right: 15),
+              child: Container(
+                child: ListView(
+                  physics: AlwaysScrollableScrollPhysics(),
+                  controller: _controller,
+                  shrinkWrap: true,
+                  children: chat.contactsList,
+                ),
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
